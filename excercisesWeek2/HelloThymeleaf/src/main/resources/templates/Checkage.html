@@ -1,0 +1,16 @@
+<!DOCTYPE HYML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>HelloAge excercise</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+</head>
+	<body>
+		<div th:if="${age}<18">
+			<p th:text="'Your age is ' + ${age} + ' and that is yoo young!'"/>
+		</div>
+		<div th:if="${age}>=18">
+			<p th:text="'Hello, ' +${name} + '!'"/>
+		</div>
+	</body>
+</html>
