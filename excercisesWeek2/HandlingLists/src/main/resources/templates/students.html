@@ -1,0 +1,15 @@
+<!DOCTYPE HYML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>studentList exercise</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+</head>
+<body>
+
+	<p th:text="${message}" />
+	<p th:each="student : ${studentList}" th:text= "${student.firstName} +' '+${student.lastName}">
+
+	
+</body>
+</html>
