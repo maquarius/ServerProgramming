@@ -1,0 +1,30 @@
+<!DOCTYPE HYML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>studentList exercise</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+</head>
+<body>
+
+	<h1>Books:</h1>
+
+	<table>
+		<tr>
+			<th>Title</th>
+			<th>Author</th>
+			<th>Year</th>
+			<th>ISBN</th>
+			<th>Price</th>
+		</tr>
+		<tr>
+			<td th:each="book: ${books}" th:text="${book.title}"></td>
+			<td th:each="book: ${books}" th:text="${book.author}"></td>
+			<td th:each="book: ${books}" th:text="${book.year}"></td>
+			<td th:each="book: ${books}" th:text="${book.ISBN}"></td>
+			<td th:each="book: ${books}" th:text="${book.price}"></td>
+	</table>
+
+
+</body>
+</html>

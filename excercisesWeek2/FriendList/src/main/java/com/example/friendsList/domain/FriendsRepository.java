@@ -5,10 +5,10 @@ import java.util.Arrays;
 import java.util.List;
 
 public class FriendsRepository {
-	private List<Friend> friendRepository = new ArrayList<Friend>();
+	private List<Friend> friendRepository;
 
 	public FriendsRepository() {
-	
+		friendRepository = new ArrayList<>();
 	}
 
 	public List<Friend> getFriendRepository() {

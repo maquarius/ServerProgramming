@@ -10,27 +10,31 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class FriendController {
 
-	public FriendsRepository repository = new FriendsRepository();
+	FriendsRepository repository = new FriendsRepository();
 
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String friends(Model model) {
-		Friend friend1 = new Friend("sdhjsad", "shjdjad");
+
+		Friend friend1 = new Friend("firstName", "lastName");
 		repository.addFriend(friend1);
-		model.addAttribute("friends", repository.getFriendRepository());
+		model.addAttribute("friend", repository.getFriendRepository());
 
 		return "friends";
 	}
 
-	@RequestMapping(value = "/index", method = RequestMethod.POST)
-	public String friendsSubmit(@ModelAttribute Friend friend, Model model) {
-		
-		model.addAttribute("friends", friend);
-		//repository.addFriend(new Friend(friends.getFirstName(), friends.getLastName()));
-
+	@RequestMapping(value = "/add")
+	public String friendsSubmit(@RequestParam(name="name")String name, Model model) {
+		String[] nameParts = name.split(" ");
+		String firstName = nameParts[0];
+		String lastName = nameParts[1];
+		repository.addFriend(new Friend(firstName, lastName));
+		model.addAttribute("friend", repository.getFriendRepository());
+	
 		return "friends";
 	}
 
