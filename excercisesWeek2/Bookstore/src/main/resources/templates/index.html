@@ -17,12 +17,13 @@
 			<th>ISBN</th>
 			<th>Price</th>
 		</tr>
-		<tr>
-			<td th:each="book: ${books}" th:text="${book.title}"></td>
-			<td th:each="book: ${books}" th:text="${book.author}"></td>
-			<td th:each="book: ${books}" th:text="${book.year}"></td>
-			<td th:each="book: ${books}" th:text="${book.ISBN}"></td>
-			<td th:each="book: ${books}" th:text="${book.price}"></td>
+		<tr th:each="book: ${book}">
+			<td th:text="${book.title}"></td>
+			<td th:text="${book.author}"></td>
+			<td th:text="${book.year}"></td>
+			<td th:text="${book.ISBN}"></td>
+			<td th:text="${book.price}"></td>
+		</tr>
 	</table>
 
 
