@@ -1,0 +1,34 @@
+<!DOCTYPE HYML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>studentList exercise</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+</head>
+<body>
+
+	<h1>Edit Book</h1>
+	<div>
+		<form th:object=${book} th:action="@{../save}" action="#" method="POST">
+			 
+			<input type="hidden" class="from-control" th:field="*{id}" />
+				<br> 
+			<label for="author">Author</label> 
+			<input type="text" id="author" th:field="*{author}" />
+				<br> 
+			<label for="title">Title</label>
+			<input type="text" id="title" th:field="*{title}" />
+				<br>
+			 <label for="isbn">ISBN</label>
+			 <input type="number" id="isbn"	th:field="*{ISBN}" />
+				<br>
+			 <label for="year">Year</label>
+			 <input type="number" id="year" th:field="*{year}" />
+			  	 <br>
+			 <input type="submit"value="save"></input>
+		</form>
+	</div>
+
+
+</body>
+</html>
