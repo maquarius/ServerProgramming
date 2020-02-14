@@ -1,0 +1,36 @@
+<!DOCTYPE HYML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Booklist: Bookstore little front end</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
+<script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+
+	<h1>Books:</h1>
+
+	<table class="table table-striped">
+		<tr>
+			<th>Title</th>
+			<th>Author</th>
+			<th>Year</th>
+			<th>ISBN</th>
+			<th>Category</th>
+			<th>Delete</th>
+			<th>Edit</th>
+		</tr>
+		<tr th:each="book: ${book}">
+			<td th:text="${book.title}"></td>
+			<td th:text="${book.author}"></td>
+			<td th:text="${book.year}"></td>
+			<td th:text="${book.ISBN}"></td>
+			<td th:text="${book.category.name}"></td>
+			<td><a class="btn btn-danger" th:href="@{/delete/{id}(id=${book.id})}">Delete</a></td>
+			<td><a th:href="@{/edit/{id}(id=${book.id})}">Edit</a></td>
+	</table>
+	<a class="btn btn-success" href="/add">Add Book</a>
+
+
+</body>
+</html>

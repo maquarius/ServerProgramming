@@ -1,30 +1,36 @@
-package com.example.bookstoreLittleFrontEnd.domain;
+package com.example.bookstoreWithMaria.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Book {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	
 	private Long id;
 	private String title, author;
 	private int year;
 	private long ISBN;
+	
+	@ManyToOne
+	@JoinColumn (name = "categoryid")
+	private Category category;
 
 	public Book() {
 
 	}
 
-	public Book(String title, String author, int year, long iSBN) {
+	public Book(String title, String author, int year, long iSBN, Category category) {
 		super();
 		this.title = title;
 		this.author = author;
 		this.year = year;
 		ISBN = iSBN;
+		this.category = category;
 	}
 
 	public Long getId() {
@@ -33,6 +39,14 @@ public class Book {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+	
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
 	}
 
 	public String getTitle() {

@@ -1,4 +1,4 @@
-package com.example.bookstoreLittleFrontEnd.domain;
+package com.example.bookstoreWithMaria.domain;
 
 import java.util.List;
 import java.util.Optional;
