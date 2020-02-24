@@ -1,0 +1,9 @@
+CREATE TABLE Customer
+(
+id BIGINT NOT NULL,
+firstName VARCHAR(40) NOT NULL,
+lastName VARCHAR(50) NOT NULL,
+address VARCHAR(50) NOT NULL,
+
+CONSTRAINT PK_Customer PRIMARY KEY(id)
+);
